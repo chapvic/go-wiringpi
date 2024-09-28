@@ -7,13 +7,8 @@ package wiringpi
 import "C"
 import "unsafe"
 
-/*
- * DrcSetupNet:
- *      Create a new instance of an DRC GPIO interface.
- *      Could be a variable nunber of pins here - we might not know in advance.
- *********************************************************************************
- */
-
+// Create a new instance of an DRC GPIO interface.
+// Could be a variable nunber of pins here - we might not know in advance.
 func DrcSetupNet(pinBase int, numPins int, ipAddress string, port string, password string) (int, error) {
     _ipAddress := C.CString(ipAddress)
     defer C.free(unsafe.Pointer(_ipAddress))

@@ -7,12 +7,7 @@ package wiringpi
 import "C"
 import "unsafe"
 
-/*
- * Ds18b20Setup:
- *      Create a new instance of a DS18B20 temperature sensor.
- *********************************************************************************
- */
-
+// Create a new instance of a DS18B20 temperature sensor.
 func Ds18b20Setup(pinBase int, serialNum string) (int, error) {
     _serialNum := C.CString(serialNum)
     defer C.free(unsafe.Pointer(_serialNum))

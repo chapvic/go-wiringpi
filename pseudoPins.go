@@ -5,12 +5,7 @@ package wiringpi
 */
 import "C"
 
-/*
- * PseudoPinsSetup:
- *      Create a new wiringPi device node for the pseudoPins driver
- *********************************************************************************
- */
-
+// Create a new wiringPi device node for the pseudoPins driver.
 func PseudoPinsSetup (pinBase int) (int, error) {
     retval := int(C.pseudoPinsSetup(C.int(pinBase)))
     return retval, wiringPiError(retval)
